@@ -40,18 +40,16 @@ public class LinkedList<T> {
     }
 
     public void add(T element) {
+        if (isEmpty()) {
+            first = new Node<T>(element, null);
+            last = first;
+        } else {
+            last.next = new Node<T>(element, null);
+            last = last.next;
+        }
+        count++;
     }
 
     public void remove(T element) {
     }
-
-    
-
-
-
-
-
-
-
-
 }
