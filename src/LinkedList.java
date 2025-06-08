@@ -95,8 +95,17 @@ public class LinkedList<T> {
         }
     }
 
+    // Returns a string representation of the linked list using string builder
     @Override
     public String toString() {
-
+        StringBuilder sb = new StringBuilder();
+        Node<T> current = first;
+        while (current != null) {
+            sb.append(current.value);
+            if (current.next != null) sb.append(" -> ");
+            current = current.next;
+        }
+        sb.append("]");
+        return sb.toString();
     }
 }
