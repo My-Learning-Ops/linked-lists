@@ -41,6 +41,12 @@ public class LinkedList<T> {
         return count == 0;
     }
 
+    // Clears the linked list
+    public void clear() {
+        first = last = null;
+        count = 0;
+    }
+
     // Check if the list contains a specific element
     public boolean contains(T element) {
         Node<T> current = first;
