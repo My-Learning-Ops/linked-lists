@@ -70,10 +70,18 @@ public class LinkedList<T> {
         }
 
         // Traverse to find node before one to remove
+        Node<T> current = first;
+        while (current.next != null && !current.next.value.equals(element)) {
+            current = current.next;
+        }
 
         // If found, unlink the node
-
-
-
+        if (current.next != null) {
+            if (current.next == last) {
+                last = current;
+            }
+            current.next = current.next.next;
+            count--;
+        }
     }
 }
