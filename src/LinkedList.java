@@ -120,6 +120,18 @@ public class LinkedList<T> {
         count--;
     }
 
+    // Converts the list into an array
+    public Object[] toArray() {
+        Object[] arr = new Object[count];
+        Node<T> current = first;
+        int i = 0;
+        while (current != null) {
+            arr[i++] = current.value;
+            current = current.next;
+        }
+        return arr;
+    }
+
     // Returns a string representation of the linked list using string builder
     @Override
     public String toString() {
