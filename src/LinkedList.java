@@ -31,25 +31,49 @@ public class LinkedList<T> {
         count = 0;
     }
 
+    // Returns the size of the list
     public int size() {
         return count;
     }
 
+    // Checks if the linked list is empty
     public boolean isEmpty() {
         return count == 0;
     }
 
+    // Adds an element to the end of the list
     public void add(T element) {
         if (isEmpty()) {
+            // If list is empty, create a new node as the first node and last node
             first = new Node<T>(element, null);
             last = first;
         } else {
+            // If the list isnt empty, create a new node as the last, link old last to new last
             last.next = new Node<T>(element, null);
             last = last.next;
         }
         count++;
     }
 
+    // Removes an element from the list
     public void remove(T element) {
+        if (isEmpty()) return;
+
+        // Check if first node is one to remove
+        if (first.value.equals(element)) {
+            first = first.next;
+            if (first == null) {
+                last = null;
+            }
+            count--;
+            return;
+        }
+
+        // Traverse to find node before one to remove
+
+        // If found, unlink the node
+
+
+
     }
 }
