@@ -110,6 +110,16 @@ public class LinkedList<T> {
         }
     }
 
+    // Removes the first element from the list
+    // Could also return the value of the element removed by changing return type to T
+    public void removeFirst() {
+        if (isEmpty()) throw new NoSuchElementException("List is empty");
+        T val = first.value;
+        first = first.next;
+        if (first == null) last = null;
+        count--;
+    }
+
     // Returns a string representation of the linked list using string builder
     @Override
     public String toString() {
