@@ -71,6 +71,15 @@ public class LinkedList<T> {
         count++;
     }
 
+    // Adds an element to the start of the list
+    public void addFirst(T element) {
+        Node<T> newNode = new Node<>(element, first);
+        first = newNode;
+        if (last == null)
+            last = newNode;
+        count++;
+    }
+
     // Removes an element from the list
     public void remove(T element) {
         if (isEmpty()) return;
