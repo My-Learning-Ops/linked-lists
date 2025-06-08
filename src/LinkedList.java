@@ -41,6 +41,16 @@ public class LinkedList<T> {
         return count == 0;
     }
 
+    // Check if the list contains a specific element
+    public boolean contains(T element) {
+        Node<T> current = first;
+        while (current != null) {
+            if (current.value.equals(element)) return true;
+            current = current.next;
+        }
+        return false;
+    }
+
     // Adds an element to the end of the list
     public void add(T element) {
         if (isEmpty()) {
@@ -83,5 +93,10 @@ public class LinkedList<T> {
             current.next = current.next.next;
             count--;
         }
+    }
+
+    @Override
+    public String toString() {
+
     }
 }
